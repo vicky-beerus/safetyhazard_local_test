@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260517101149",
+    "project_id": "localtaskapp",
+    "storage_bucket": "localtaskapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260517101149:android:dc733a492bb4d62e4857b4",
+        "android_client_info": {
+          "package_name": "com.example.localtaskapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARsYcKIrjOHdxyZHOl_dC5pGX56vwu3FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
