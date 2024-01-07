@@ -166,12 +166,10 @@ class _AddSafetyHazardsState extends State<AddSafetyHazards> {
       content: Text('Added Successfully'),
       duration: Duration(seconds: 3),
     );
-
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
-
   Future<void> _checkPermission(BuildContext context) async {
     await Permission.camera.request();
     await Permission.storage.request();
@@ -260,6 +258,7 @@ class _AddSafetyHazardsState extends State<AddSafetyHazards> {
   }
 
 
+  /// to convert file to base64
   Future<String> fileToBase64(File file) async {
     List<int> fileBytes = await file.readAsBytes();
     String base64String = base64Encode(fileBytes);
