@@ -1,10 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:localtaskapp/SAFETY_HAZARDS/repo/safety_hazard_repo.dart';
-import 'package:localtaskapp/SAFETY_HAZARDS/view/safety_hazards_list_view.dart';
+import 'package:localtaskapp/INVENTORY_MANAGEMENT/repo/inventroy_repo.dart';
+
 import 'package:permission_handler/permission_handler.dart';
 
+import 'INVENTORY_MANAGEMENT/view/inventory_view.dart';
 import 'firebase_options.dart';
 
 
@@ -18,7 +19,7 @@ Future<void> main()async{
   );
   await Permission.camera.request();
   await Permission.storage.request();
-  await Permission.location.request();
+  // await Permission.location.request();
   runApp(const MyApp());
 }
 
@@ -30,9 +31,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider(create: (context)=>HazardsRepository())
+        RepositoryProvider(create: (context)=>InventoryRepository()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         showSemanticsDebugger: false,
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: HazardsList(),
+        home: InventoryListView(),
       ),
     );
   }
